@@ -1,0 +1,130 @@
+#editor-resizer {
+  position: absolute;
+  border: 1px dashed #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  .handler {
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: nwse-resize;
+    user-select: none;
+  }
+  .toolbar {
+    position: absolute;
+    top: -5em;
+    left: 50%;
+    padding: 0.5em;
+    border-radius: 3px;
+    transform: translateX(-50%);
+    width: 20em;
+    background-color: #222;
+    box-shadow: 2px 2px 8px #000;
+    border-radius: 8px;
+    .group {
+      display: flex;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      white-space: nowrap;
+      text-align: center;
+      line-height: 2;
+      color: #aaa;
+      padding: 4px;
+      font-family: Arial, Helvetica, sans-serif;
+      &:not(:first-child) {
+        margin-top: 0.5em;
+      }
+      .btn {
+        flex: 1 0 0;
+        text-align: center;
+        width: 25%;
+        padding: 0;
+        display: inline-block;
+        vertical-align: top;
+        user-select: none;
+        color: inherit;
+        font-size: 14px !important;
+        &:not(:last-child) {
+          border-right: 1px solid #4d4d4d;
+        }
+        &:not(.btn-group):active {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+      .btn:hover {
+        color: #faf5f7;
+        cursor: pointer;
+      }
+      .input-wrapper {
+        width: 25%;
+        position: relative;
+        border-right: 1px solid #4d4d4d;
+        min-width: 4em;
+
+        &::after {
+          content: " ";
+          position: absolute;
+          // height: 1px;
+          // background-color: #333;
+          // left: 0.5em;
+          // right: 1em;
+          // bottom: 0.2em;
+        }
+        input {
+          color: inherit;
+          text-align: center;
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 0 0.5em;
+          padding-right: 1.5em;
+          background-color: #222;
+          &:focus ~ .tooltip {
+            display: block;
+          }
+          margin: 0;
+        }
+        .suffix {
+          position: absolute;
+          right: 0.5em;
+        }
+        .tooltip {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #fff;
+          box-shadow: 0 0 3px #a7a7a7;
+          padding: 0 0.6em;
+          border-radius: 5px;
+          zoom: 0.85;
+        }
+      }
+    }
+  }
+  .showSize {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.5em;
+    border-radius: 8px;
+    background-color: #222;
+    box-shadow: 2px 2px 8px #000;
+    transform: translateX(-50%);
+    color: #faf5f7;
+    font-size: 16px;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield !important;
+    -webkit-appearance: none !important;
+    appearance: textfield !important;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
